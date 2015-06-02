@@ -10,7 +10,7 @@ import android.view.MenuItem;
 
 import com.kupferwerk.androiddatabinding.databinding.ActivityMainBinding;
 import com.kupferwerk.androiddatabinding.model.Movie;
-import com.kupferwerk.androiddatabinding.model.MovieDAO;
+import com.kupferwerk.androiddatabinding.model.MovieStore;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,12 +48,12 @@ public class MainActivity extends AppCompatActivity {
    private void initRecyclerView() {
       final RecyclerView list = binding.list;
       list.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-      final ListAdapter adapter = new ListAdapter(MovieDAO.getAllMovies());
+      final ListAdapter adapter = new ListAdapter(MovieStore.getAllMovies());
       list.setAdapter(adapter);
       adapter.setOnItemClickListener(new ListAdapter.OnItemClickListener() {
          @Override
-         public void onItemClick(Movie movie) {
-            startActivity(DetailActivity.buildIntent(getApplicationContext(), movie));
+         public void onItemClick(int id, Movie movie) {
+            startActivity(DetailActivity.buildIntent(getApplicationContext(), id));
          }
       });
    }

@@ -9,23 +9,25 @@ import android.view.View;
 
 import com.kupferwerk.androiddatabinding.databinding.ActivityDetailBinding;
 import com.kupferwerk.androiddatabinding.model.Movie;
+import com.kupferwerk.androiddatabinding.model.MovieStore;
 import com.kupferwerk.androiddatabinding.utils.DateUtils;
 
 public class DetailActivity extends AppCompatActivity {
 
-   private static final String EXTRA_MOVIE = "EXTRA_MOVIE";
+   private static final String EXTRA_MOVIE_ID = "EXTRA_MOVIE_ID";
    private ActivityDetailBinding binding;
 
-   public static Intent buildIntent(final Context context, final Movie movie) {
+   public static Intent buildIntent(final Context context, final int movieId) {
       Intent intent = new Intent(context, DetailActivity.class);
-      intent.putExtra(EXTRA_MOVIE, movie);
+      intent.putExtra(EXTRA_MOVIE_ID, movieId);
       return intent;
    }
 
    @Override
    protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
-      final Movie movie = getIntent().getParcelableExtra(EXTRA_MOVIE);
+      final int movieId = getIntent().getIntExtra(EXTRA_MOVIE_ID, 0);
+      final Movie movie = MovieStore.getAllMovies().get(movieId);
       binding = DataBindingUtil.setContentView(this, R.layout.activity_detail);
       binding.setMovie(movie);
       binding.saveButton.setOnClickListener(new View.OnClickListener() {

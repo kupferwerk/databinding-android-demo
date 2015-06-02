@@ -14,7 +14,7 @@ import java.util.List;
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
    public interface OnItemClickListener {
-      void onItemClick(final Movie movie);
+      void onItemClick(final int id, final Movie movie);
    }
 
    public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -46,7 +46,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
          @Override
          public void onClick(View v) {
             if (onItemClickListener != null) {
-               onItemClickListener.onItemClick(movies.get(i));
+               onItemClickListener.onItemClick(i, movies.get(i));
             }
          }
       });
