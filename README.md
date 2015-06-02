@@ -6,3 +6,5 @@ This app provides samples for the new Android Data Binding plugin. The following
 * Usage in Recyclerview
 * Observable implementation
 * Formatting with Imports
+* Using onClickListener for items in Recyclerview
+* Accessing UI elements without findViewById(...)
