@@ -21,5 +21,14 @@ public class MovieStore {
       ALL_MOVIES.add(new Movie().setTitle("The Amazing Spider-Man").setGenre("Action")
             .setPublicationDate(new Date(1341360000000L))
             .setImageUrl("https://image.tmdb.org/t/p/original/dosjP4HDZgUl8vD3qq09cbSF5E2.jpg"));
+      ALL_MOVIES.add(new Movie().setTitle("Terminator 2: Judgment Day").setGenre("Action")
+            .setPublicationDate(new Date(678326400000L))
+            .setImageUrl("https://image.tmdb.org/t/p/original/1hSvGqtRgXTjgxIM6OU7ioeKPwz.jpg"));
+      ALL_MOVIES.add(new Movie().setTitle("From Dusk Till Dawn").setGenre("Horror")
+            .setPublicationDate(new Date(821923200000L))
+            .setImageUrl("https://image.tmdb.org/t/p/original/iMmtziO0vr4WY2qr598VA7ulaon.jpg"));
+      ALL_MOVIES.add(new Movie().setTitle("Shaun the Sheep Movie").setGenre("Family")
+            .setPublicationDate(new Date(1423180800000L))
+            .setImageUrl("https://image.tmdb.org/t/p/original/ibfQa5xTUKHfKbVQIIgu9mDjgkS.jpg"));
    }
 }

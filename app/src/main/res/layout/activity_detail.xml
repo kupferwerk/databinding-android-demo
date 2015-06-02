@@ -11,43 +11,49 @@
          type="com.kupferwerk.androiddatabinding.model.Movie" />
    </data>
 
-   <LinearLayout
+   <ScrollView
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="vertical"
-      android:padding="8dp">
+      android:layout_height="match_parent">
 
-      <ImageView
-         android:layout_width="match_parent"
-         android:layout_height="128dp"
-         android:scaleType="centerCrop"
-         app:imageUrl="@{movie.imageUrl}" />
-
-      <EditText
-         android:id="@+id/title"
+      <LinearLayout
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
-         android:text="@{movie.title}" />
+         android:orientation="vertical"
+         android:padding="8dp">
 
-      <EditText
-         android:id="@+id/genre"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:text="@{movie.genre}" />
+         <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside"
+            app:imageUrl="@{movie.imageUrl}" />
 
-      <EditText
-         android:id="@+id/publicationDate"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:text="@{DateUtils.formatDate(movie.publicationDate)}" />
+         <EditText
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{movie.title}" />
 
-      <Button
-         android:id="@+id/save_button"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:layout_marginTop="8dp"
-         android:text="@string/save" />
+         <EditText
+            android:id="@+id/genre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{movie.genre}" />
 
-   </LinearLayout>
+         <EditText
+            android:id="@+id/publicationDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{DateUtils.formatDate(movie.publicationDate)}" />
+
+         <Button
+            android:id="@+id/save_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/save" />
+
+      </LinearLayout>
+
+   </ScrollView>
 
 </layout>
