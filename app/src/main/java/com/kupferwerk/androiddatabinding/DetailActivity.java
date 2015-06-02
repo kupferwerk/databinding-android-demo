@@ -5,9 +5,11 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.kupferwerk.androiddatabinding.databinding.ActivityDetailBinding;
 import com.kupferwerk.androiddatabinding.model.Movie;
+import com.kupferwerk.androiddatabinding.utils.DateUtils;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -26,5 +28,17 @@ public class DetailActivity extends AppCompatActivity {
       final Movie movie = getIntent().getParcelableExtra(EXTRA_MOVIE);
       binding = DataBindingUtil.setContentView(this, R.layout.activity_detail);
       binding.setMovie(movie);
+      binding.saveButton.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View v) {
+            String title = binding.title.getText().toString();
+            String genre = binding.genre.getText().toString();
+            String publicationDateString = binding.publicationDate.getText().toString();
+            movie.setTitle(title);
+            movie.setGenre(genre);
+            movie.setPublicationDate(DateUtils.parseDate(publicationDateString));
+            finish();
+         }
+      });
    }
 }
