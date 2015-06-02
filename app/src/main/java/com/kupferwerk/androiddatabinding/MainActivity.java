@@ -48,12 +48,12 @@ public class MainActivity extends AppCompatActivity {
       final RecyclerView list = binding.list;
       list.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
       final ListAdapter adapter = new ListAdapter(MovieStore.getAllMovies());
-      list.setAdapter(adapter);
       adapter.setOnItemClickListener(new ListAdapter.OnItemClickListener() {
          @Override
          public void onItemClick(int id, Movie movie) {
             startActivity(DetailActivity.buildIntent(getApplicationContext(), id));
          }
       });
+      list.setAdapter(adapter);
    }
 }

@@ -42,7 +42,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
    @Override
    public void onBindViewHolder(ViewHolder viewHolder, final int i) {
       viewHolder.binding.setMovie(movies.get(i));
-      viewHolder.binding.getRoot().setOnClickListener(new View.OnClickListener() {
+      viewHolder.binding.setClicklistener(new View.OnClickListener() {
          @Override
          public void onClick(View v) {
             if (onItemClickListener != null) {
