@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:app="http://schemas.android.com/apk/res-auto">
+
+   <data>
+
+      <import type="com.kupferwerk.androiddatabinding.utils.DateUtils" />
+
+      <variable
+         name="movie"
+         type="com.kupferwerk.androiddatabinding.model.Movie" />
+   </data>
+
+   <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:padding="8dp">
+
+      <ImageView
+         android:layout_width="match_parent"
+         android:layout_height="128dp"
+         android:scaleType="centerCrop"
+         app:imageUrl="@{movie.imageUrl}" />
+
+      <EditText
+         android:id="@+id/title"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="@{movie.title}" />
+
+      <EditText
+         android:id="@+id/genre"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="@{movie.genre}" />
+
+      <EditText
+         android:id="@+id/publicationDate"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="@{DateUtils.formatDate(movie.publicationDate)}" />
+
+   </LinearLayout>
+
+</layout>
